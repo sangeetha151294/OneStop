@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
+  <display-name>twitter</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>loginpath</servlet-name>
+    <servlet-class>onestop.GoogleLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginpath</servlet-name>
+    <url-pattern>/loginpath</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>googleloggedpath</servlet-name>
+    <servlet-class>onestop.GoogleResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>googleloggedpath</servlet-name>
+    <url-pattern>/google/redirect</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>dashboardpath</servlet-name>
+    <servlet-class>onestop.DashboardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dashboardpath</servlet-name>
+    <url-pattern>/dashboardpath</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>disboard</servlet-name>
+    <servlet-class>onestop.PostFeed</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>disboard</servlet-name>
+    <url-pattern>/feed/post</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>disboardget</servlet-name>
+    <servlet-class>onestop.getFeed</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>disboardget</servlet-name>
+    <url-pattern>/feed/getAll</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>feedbackdetails</servlet-name>
+    <servlet-class>onestop.feedbackServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>feedbackdetails</servlet-name>
+    <url-pattern>/feedback</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>feedbacksubmit1</servlet-name>
+    <servlet-class>onestop.feedbacksubmitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>feedbacksubmit1</servlet-name>
+    <url-pattern>/feedbacksubmit</url-pattern>
+  </servlet-mapping>
+  <error-page>
+  <error-code>404</error-code>
+  <location>/WEB-INF/error.jsp</location>
+</error-page>
+<error-page>
+  <error-code>500</error-code>
+  <location>/WEB-INF/error.jsp</location>
+</error-page>
+  
+</web-app>
